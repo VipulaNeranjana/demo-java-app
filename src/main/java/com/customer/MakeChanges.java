@@ -24,7 +24,7 @@ public class MakeChanges {
 			if(requrement.equals("Delete")) {
 				
 				statement1.executeUpdate(deleteOrder);
-				messege = "Your account is successfully deleted";
+				messege = "Your account is successfully deleted!";
 			}
 			else if(requrement.equals("Change")) {
 				String getid = "select * from studentdetails where userName='"+userName+"';";
@@ -32,7 +32,7 @@ public class MakeChanges {
 				result1.next();
 				String changingOrder = "UPDATE studentdetails SET name = '"+name+"', email = '"+email+"', phone = '"+phone+"', userName = '"+userName+"', password = '"+password+"' WHERE id = "+result1.getInt(1)+";";
 				statement1.executeUpdate(changingOrder);
-				messege = "your accunt is successfully changed";
+				messege = "your accunt is successfully changed!";
 				  
 			}
 			
