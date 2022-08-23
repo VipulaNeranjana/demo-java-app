@@ -9,6 +9,7 @@ table, th, td {
   border:1px solid black;
 }
 </style>
+<link rel="stylesheet" href="styles/siginings.css">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>

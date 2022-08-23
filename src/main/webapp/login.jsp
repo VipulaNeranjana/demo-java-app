@@ -3,23 +3,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="styles/login.css">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="LoginServelet" method="post">
-		User Name <input type="text" name="userName"><br>
-		Password <input type="password" name="password"><br>
+	<div class="container1">
+		<form action="LoginServelet" method="post">
+		
+			<div class="user">
+				<label>User Name:</label>
+				<input class="in" type="text" name="userName"><br>
+			</div>
+			<div class="pass">
+				<label>Password:</label>
+				<input class="in" type="password" name="password">
+			</div><br><br>
+			
+			<div>
+				Submit <input type="submit" name="submit" value="login">
+				<input type="submit" name="submit" value="Make Changes">
+				<button type="submit" name="submit" value="viewAll">view all</button><br>
+			</div>
+	
+			<div class"newsign">
+				<a href="Form.jsp">Sign in</a>
+			</div>
+		</form>	
+	</div>	
 
-		Submit <input type="submit" name="submit" value="login">
-		<input type="submit" name="submit" value="Make Changes"><br>
-		
-		<a href="Form.jsp">Sign in</a>
-	</form>
-		
-	<form action="ViewServelet" method="post">
-		<button type="submit">view all</button>
-	</form>
 	<p>${customerdetail}</p>
 	
 
