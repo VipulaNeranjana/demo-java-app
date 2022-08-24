@@ -29,10 +29,10 @@
 			<div class"newsign">
 				<a href="Form.jsp">Sign in</a>
 			</div>
+			<div style="color:red">${emptyMessage}</div>
 		</form>	
 	</div>	
 
-	<p>${customerdetail}</p>
 	
 
 </body>
