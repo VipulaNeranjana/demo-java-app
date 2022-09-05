@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class ChangesServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -21,10 +22,30 @@ public class ChangesServelet extends HttpServlet {
 		String requrement = request.getParameter("requrement");
 		
 		try {
-			
-			String change = MakeChanges.makeChanges(name, email, phone, userName, password, requrement);
-			RequestDispatcher sendingDetails = request.getRequestDispatcher("login.jsp");
-			sendingDetails.forward(request, response);
+			if(requrement.equals("Change")) {
+											
+				String[] change = MakeChanges.makeChanges(name, email, phone, userName, password, requrement);
+				String statement = "Successfully Updated!";
+				request.setAttribute("statement", statement);
+				
+				List<Customer> customerdetail = CustomerDbUtil.validate(change[1], change[2]);
+				request.setAttribute("customerdetail", customerdetail);
+
+				RequestDispatcher sendingDetails = request.getRequestDispatcher("UserAccount.jsp");
+				sendingDetails.forward(request, response);
+			}
+			else if(requrement.equals("Delete")) {
+								 			
+				String[] change = MakeChanges.makeChanges(name, email, phone, userName, password, requrement);
+				String statement = "Successfully Deleted!";
+				request.setAttribute("statement", statement);
+				
+//				List<Customer> customerdetail = CustomerDbUtil.validate(userName, password);
+//				request.setAttribute("customerdetail", customerdetail);
+
+				RequestDispatcher sendingDetails = request.getRequestDispatcher("login.jsp");
+				sendingDetails.forward(request, response);
+			}
 			
 		}catch(Exception e) {
 			

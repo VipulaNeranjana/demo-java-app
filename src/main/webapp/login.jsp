@@ -22,14 +22,15 @@
 			
 			<div>
 				Submit <input type="submit" name="submit" value="login">
-				<input type="submit" name="submit" value="Make Changes">
-				<button type="submit" name="submit" value="viewAll">view all</button><br>
+				<!-- <input type="submit" name="submit" value="Make Changes">
+				<button type="submit" name="submit" value="viewAll">view all</button><br> -->
 			</div>
 	
 			<div class"newsign">
-				<a href="Form.jsp">Sign in</a>
+				<a href="Form.jsp">Sign Up</a>
 			</div>
 			<div style="color:red">${emptyMessage}</div>
+			<div style="color:#0bea0b;">${statement}</div>
 		</form>	
 	</div>	
 

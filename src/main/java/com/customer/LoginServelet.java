@@ -21,7 +21,6 @@ public class LoginServelet extends HttpServlet {
 		String submittedValue = request.getParameter("submit");
 	
 
-		
 		try {
 			List<Customer> customerdetail = CustomerDbUtil.validate(userName, passWord);
 			request.setAttribute("customerdetail", customerdetail);	
